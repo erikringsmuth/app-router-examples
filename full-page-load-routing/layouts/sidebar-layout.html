@@ -1,0 +1,64 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<link rel="import" href="/bower_components/core-scaffold/core-scaffold.html">
+<link rel="import" href="/bower_components/core-header-panel/core-header-panel.html">
+<link rel="import" href="/bower_components/core-toolbar/core-toolbar.html">
+<link rel="import" href="/bower_components/core-item/core-item.html">
+
+<polymer-element name="sidebar-layout" attributes="selected" noscript>
+  <template>
+    <style>
+      /** toolbar */
+      :host /deep/ core-toolbar {
+      }
+
+      /** main content */
+      :host /deep/ core-header-panel[main] {
+        background-color: #fff;
+      }
+      .content {
+        padding: 20px;
+      }
+
+      /** sidebar */
+      :host /deep/ core-header-panel[navigation] {
+      }
+      :host /deep/ core-header-panel[navigation] core-item {
+        padding: 2px 12px;
+        line-height: 40px;
+      }
+      :host /deep/ core-header-panel[navigation] a:not(:first-of-type) core-item {
+        border-top: 1px solid #f5f5f5;
+      }
+      :host /deep/ core-header-panel[navigation] a {
+        color: #555;
+        text-decoration: none;
+      }
+      :host /deep/ core-header-panel[navigation] a:hover core-item,
+      :host /deep/ core-header-panel[navigation] a:focus core-item {
+        background-color: #fcfcfc;
+        color: #222;
+        border-right: 6px solid #f5f5f5;
+      }
+      :host /deep/ core-header-panel[navigation] a[active] core-item {
+        border-right: 6px solid #f5f5f5;
+      }
+    </style>
+    <core-scaffold>
+      <core-header-panel navigation flex mode="seamed">
+        <core-toolbar>app-router-examples</core-toolbar>
+        <div>
+          <a active?="{{selected == 'home'}}" href="/"><core-item icon="home" label="Home"></core-item></a>
+          <a active?="{{selected == 'demo'}}" href="/demo/1337?queryParam1=Routing%20with%20Web%20Components!"><core-item icon="polymer" label="Data Binding"></core-item></a>
+          <a active?="{{selected == 'notes'}}" href="/notes"><core-item icon="info-outline" label="Notes"></core-item></a>
+          <a href="https://github.com/erikringsmuth/app-router"><core-item icon="exit-to-app" label="GitHub"></core-item></a>
+        </div>
+      </core-header-panel>
+      <div tool>
+        <content select=".title"></content>
+      </div>
+      <div class="content">
+        <content></content>
+      </div>
+    </core-scaffold>
+  </template>
+</polymer-element>
