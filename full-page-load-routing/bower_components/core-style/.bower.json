@@ -2,17 +2,17 @@
   "name": "core-style",
   "private": true,
   "dependencies": {
-    "polymer": "Polymer/polymer#>=0.3.0 <1.0.0"
+    "polymer": "Polymer/polymer#>=0.4.0 <1.0.0"
   },
   "homepage": "https://github.com/Polymer/core-style",
-  "version": "0.3.4",
-  "_release": "0.3.4",
+  "version": "0.4.0",
+  "_release": "0.4.0",
   "_resolution": {
     "type": "version",
-    "tag": "0.3.4",
-    "commit": "c47137e4572cff3a72a68b2a9d83c80a86182cd6"
+    "tag": "0.4.0",
+    "commit": "be8ce5f0428c0423640dcd88a26b3164a851a3bf"
   },
   "_source": "git://github.com/Polymer/core-style.git",
-  "_target": ">=0.3.0 <1.0.0",
+  "_target": ">=0.4.0 <1.0.0",
   "_originalSource": "Polymer/core-style"
 }

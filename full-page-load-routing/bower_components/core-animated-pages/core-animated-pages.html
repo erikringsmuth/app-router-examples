@@ -1,3 +1,12 @@
+<!--
+    @license
+    Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+    This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+    The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+    The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+    Code distributed by Google as part of the polymer project is also
+    subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
 <link href="../core-selector/core-selector.html" rel="import">
 
 <link href="transitions/hero-transition.html" rel="import">
@@ -208,8 +217,16 @@ Example:
     </core-animated-pages>
 
 @element core-animated-pages
+@extends core-selector
 @status beta
 @homepage github.io
+-->
+<!--
+Fired before a page transition occurs. Both pages involved in the transition are visible when
+this event fires. This is useful if there is something the client needs to do when a page becomes
+visible.
+
+@event core-animated-pages-transition-prepare
 -->
 <!--
 Fired when a page transition completes.
@@ -318,6 +335,11 @@ Fired when a page transition completes.
         dst: dst,
         easing: 'cubic-bezier(0.4, 0, 0.2, 1)'
       }
+
+      // fire an event so clients have a chance to do something when the
+      // new page becomes visible but before it draws.
+      this.fire('core-animated-pages-transition-prepare');
+
       //
       // prepare transition
       this._transitionElements.forEach(function(transition) {
