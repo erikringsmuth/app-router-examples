@@ -11,7 +11,7 @@ Hash routing uses hash paths `/#/paths`.
 3. Open [http://localhost:8080/](http://localhost:8080/)
 
 #### pushstate-routing
-Push state routing uses regular paths `/path` and extends`<a>` tags with [html5-history-anchor](https://github.com/erikringsmuth/html5-history-anchor). Example: `<a is="html5-history-anchor" href="/link" pushstate popstate>/link</a>`.
+Push state routing uses regular paths `/path` and extends `<a>` tags with [html5-history-anchor](https://github.com/erikringsmuth/html5-history-anchor). Example: `<a is="html5-history-anchor" href="/link" pushstate popstate>/link</a>`.
 
 1. Open a terminal in the `pushstate-routing` directory
 2. Start the express.js server with `node server.js`
