@@ -1,0 +1,31 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<link rel="import" href="/layouts/sidebar-layout.html">
+
+<polymer-element name="notes-page" noscript>
+  <template>
+    <sidebar-layout selected="notes">
+      <div class="title">Home</div>
+
+      <h2>HTML Imports & Relative Paths</h2>
+
+      <p>Relative paths work differently when inside of an imported document. You can read more about it <a href="http://erikringsmuth.github.io/app-router/#/notes">here</a>.</p>
+
+      <p>The current URL is <code>/notes</code>, the current directory is <code>/</code>, and the current imported document is <code>/pages/notes-page.html</code>. This means all relative paths will be relative to <code>/pages/</code> or <code>/pages/notes-page.html</code>, not <code>/</code>.</p>
+
+      <h3>Relative Paths</h3>
+      <ul>
+        <li><a href="test"><code>href="test"</code></a> - links to <code>/pages/test</code></li>
+        <li><a href="#test"><code>href="#test"</code></a> - links to <code>/pages/notes-page.html#test</code></li>
+      </ul>
+
+      <h3>Absolute Paths</h3>
+      <ul>
+        <li><a href="/test"><code>href="/test"</code></a> - links to <code>/test</code></li>
+        <li><a href="/#/test"><code>href="/#/test"</code></a> - links to <code>/#/test</code></li>
+      </ul>
+
+      <p>I'm not sure if <code>href="#test"</code> linking to <code>/pages/notes-page.html#test</code> is intentional or a bug. Using an absolute hash path works <code>href="/#/test"</code>.</p>
+
+    </sidebar-layout>
+  </template>
+</polymer-element>
