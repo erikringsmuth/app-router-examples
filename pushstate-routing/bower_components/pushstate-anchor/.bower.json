@@ -1,6 +1,6 @@
 {
   "name": "pushstate-anchor",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "authors": [
     "Erik Ringsmuth <erik.ringsmuth@gmail.com>"
   ],
@@ -19,13 +19,13 @@
     "gulpfile.js",
     "package.json"
   ],
-  "_release": "0.1.0",
+  "_release": "0.2.0",
   "_resolution": {
     "type": "version",
-    "tag": "v0.1.0",
-    "commit": "e40ad93c911a1e18c5c285c207b938981012bd7e"
+    "tag": "v0.2.0",
+    "commit": "01759f27da0d5cde460c8fb3425e47ad66ce31ba"
   },
   "_source": "git://github.com/erikringsmuth/pushstate-anchor.git",
-  "_target": "~0.1.0",
+  "_target": "~0.2.0",
   "_originalSource": "pushstate-anchor"
 }

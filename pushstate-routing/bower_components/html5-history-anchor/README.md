@@ -1,30 +1,28 @@
 ## &lt;a is="html5-history-anchor"&gt;
-> Extend the `<a>` tag with the `window.history` API
+> Extend the `<a>` tag with the [HTML5 history API](http://www.w3.org/html/wg/drafts/html/master/browsers.html#the-history-interface)
 >
-> [HTML5 history spec](http://www.w3.org/html/wg/drafts/html/master/browsers.html#the-history-interface)
+> Fully featured version of the [pushstate-anchor](https://github.com/erikringsmuth/pushstate-anchor)
 
-The `<a>` tag you know and love.
+A link from 1992.
 ```html
-<a href="/link">A link from 1992</a>
+<a href="/home">Home</a>
 ```
 
-Extended with the HTML5 `window.history` API.
+Now using the HTML5 `window.history` API.
 ```html
-<a is="html5-history-anchor" href="/link" pushstate popstate
-   title="New Title" state='{"message":"New State!"}'>/link</a>
+<a is="html5-history-anchor" href="/home" pushstate popstate
+   title="Home Page" state='{"message":"New State!"}'>Home</a>
 ```
 
 Clicking this link calls the HTML5 history API.
 ```js
-window.history.pushState({message:'New State!'}, 'New Title', '/link');
+window.history.pushState({message:'New State!'}, 'Home Page', '/home');
 window.dispatchEvent(new PopStateEvent('popstate', {
   bubbles: false,
   cancelable: false,
   state: {message:'New State!'}
 }));
 ```
-
-`history.pushState()` doesn't dispatch a `popstate` event or load a new page by itself. It was only meant to push state into history. This is an "undo" feature for single page applications. This is why you have to manually dispatch a `popstate` event. Including both `pushstate` and `popstate` attributes on the link will push the new state into history then dispatch a `popstate` event which you can use to load a new page with a router.
 
 ## Install
 [Download](https://github.com/erikringsmuth/html5-history-anchor/archive/master.zip) or run `bower install html5-history-anchor --save`
@@ -39,28 +37,28 @@ or
 ## API
 The API is a direct extension of the `<a>` tag and `window.history`. Examples:
 
-Call `history.pushState(null, null, '/new-state')` and dispatch a `popstate` event.
+Push a new state with `history.pushState(null, null, '/new-state')` and dispatch a `popstate` event.
 ```html
-<a is="html5-history-anchor" href="/new-state" pushstate popstate>/new-state</a>
+<a is="html5-history-anchor" href="/new-state" pushstate popstate>New State</a>
 ```
 
-Call `history.replaceState({message:'Replaced State!'}, null, '/new-state')` but don't `popstate`.
+Replace the current state with `history.replaceState({message:'Replaced State!'}, null, '/replaced-state')` and don't `popstate`.
 ```html
-<a is="html5-history-anchor" href="/new-state"
-   replacestate state='{"message":"Replaced State!"}'>/new-state</a>
+<a is="html5-history-anchor" href="/replaced-state"
+   replacestate state='{"message":"Replaced State!"}'>Replaced State</a>
 ```
 
-Call `history.back()`.
+Back button with `history.back()`.
 ```html
 <a is="html5-history-anchor" back>Back</a>
 ```
 
-Call `history.forward()`.
+Forward button with `history.forward()`.
 ```html
 <a is="html5-history-anchor" forward>Forward</a>
 ```
 
-Call `history.go(-2)`.
+Back 2 pages with `history.go(-2)`.
 ```html
 <a is="html5-history-anchor" go="-2">Back 2 Pages</a>
 ```
@@ -71,7 +69,8 @@ Refresh the page with `history.go(0)`.
 ```
 
 ## Notes
-The [HTML5 history spec](http://www.w3.org/html/wg/drafts/html/master/browsers.html#the-history-interface) is quirky.
+The [HTML5 history spec](http://www.w3.org/html/wg/drafts/html/master/browsers.html#the-history-interface) is a bit quirky. `history.pushState()` doesn't dispatch a `popstate` event or load a new page by itself. It was only meant to push state into history. This is an "undo" feature for single page applications. This is why you have to manually dispatch a `popstate` event. Including both `pushstate` and `popstate` attributes on the link will push the new state into history then dispatch a `popstate` event which you can use to load a new page with a router.
+
 - `history.pushState()` and `history.replaceState()` don't dispatch `popstate` events.
 - `history.back()`, `history.forward()`, and the browser's back and foward buttons do dispatch `popstate` events.
 - `history.go()` and `history.go(0)` do a full page reload and don't dispatch `popstate` events.

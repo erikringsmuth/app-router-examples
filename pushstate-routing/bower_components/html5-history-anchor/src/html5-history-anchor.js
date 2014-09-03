@@ -17,6 +17,11 @@
   var HTML5HistoryAnchorElement = Object.create(HTMLAnchorElement.prototype);
 
   function historyAnchorEventListener(event) {
+    // open in new tab
+    if (event.ctrlKey || event.metaKey || event.which === 2) {
+      return;
+    }
+
     // pushstate
     if (this.hasAttribute('pushstate')) {
       window.history.pushState(JSON.parse(this.getAttribute('state')), this.getAttribute('title'), this.getAttribute('href'));

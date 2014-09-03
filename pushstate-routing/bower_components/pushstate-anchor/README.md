@@ -1,7 +1,7 @@
 ## &lt;a is="pushstate-anchor"&gt;
 > Extend the `<a>` tag with `history.pushState()`
 >
-> The simpified version of the [html5-history-anchor](https://github.com/erikringsmuth/html5-history-anchor)
+> Simpified version of the [html5-history-anchor](https://github.com/erikringsmuth/html5-history-anchor)
 
 A link from 1992.
 ```html

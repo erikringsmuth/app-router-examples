@@ -7,8 +7,8 @@
   "license": "MIT",
   "dependencies": {
     "app-router": "~0.7.0",
-    "pushstate-anchor": "~0.1.0",
-    "html5-history-anchor": "~0.2.0",
+    "pushstate-anchor": "~0.2.0",
+    "html5-history-anchor": "~0.3.2",
     "polymer": "Polymer/polymer#~0.4.0",
     "platform": "Polymer/platform#~0.4.0",
     "core-elements": "Polymer/core-elements#~0.4.0"
