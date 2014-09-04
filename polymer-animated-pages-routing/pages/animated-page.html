@@ -1,0 +1,45 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<link rel="import" href="/bower_components/core-animated-pages/core-animated-pages.html">
+<link rel="import" href="/layouts/sidebar-layout.html">
+
+<polymer-element name="animated-page" attributes="pageId" noscript>
+  <template>
+    <style>
+      core-animated-pages, section, div {
+        height: 500px;
+      }
+    </style>
+    <sidebar-layout selected="page-{{pageId}}">
+      <div class="title">Animated</div>
+
+      <core-animated-pages selected="{{pageId}}" transitions="cross-fade-all">
+        <section>
+          <div layout vertical center center-justified style="background:red;">
+            <div>1</div>
+          </div>
+        </section>
+        <section>
+          <div layout vertical center center-justified style="background:blue;">
+            <div>2</div>
+          </div>
+        </section>
+        <section>
+          <div layout vertical center center-justified style="background:purple;">
+            <div>3</div>
+          </div>
+        </section>
+        <section>
+          <div layout vertical center center-justified style="background:orange;">
+            <div>4</div>
+          </div>
+        </section>
+        <section>
+          <div layout vertical center center-justified style="background:green;">
+            <div>5</div>
+          </div>
+        </section>
+      </core-animated-pages>
+
+    </sidebar-layout>
+  </template>
+</polymer-element>
