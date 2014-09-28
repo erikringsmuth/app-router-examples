@@ -1,6 +1,6 @@
 {
   "name": "html5-history-anchor",
-  "version": "0.3.2",
+  "version": "0.4.0",
   "authors": [
     "Erik Ringsmuth <erik.ringsmuth@gmail.com>"
   ],
@@ -19,13 +19,16 @@
     "gulpfile.js",
     "package.json"
   ],
-  "_release": "0.3.2",
+  "devDependencies": {
+    "platform-dev": "Polymer/platform-dev#~0.4.1"
+  },
+  "_release": "0.4.0",
   "_resolution": {
     "type": "version",
-    "tag": "v0.3.2",
-    "commit": "2841f5de12b16fd5011b5b7c767f065a6d3e8799"
+    "tag": "v0.4.0",
+    "commit": "9cc84d0d422edc137c5c8c1113e227eff48df5f5"
   },
   "_source": "git://github.com/erikringsmuth/html5-history-anchor.git",
-  "_target": "~0.3.2",
+  "_target": "~0.4.0",
   "_originalSource": "html5-history-anchor"
 }

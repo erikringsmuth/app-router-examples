@@ -36,11 +36,27 @@
 
     // popstate
     if (this.hasAttribute('popstate')) {
-      window.dispatchEvent(new PopStateEvent('popstate', {
-        bubbles: false,
-        cancelable: false,
-        state: window.history.state
-      }));
+      try {
+        var popstateEvent = new PopStateEvent('popstate', {
+          bubbles: false,
+          cancelable: false,
+          state: window.history.state
+        });
+
+        if ('dispatchEvent_' in window) {
+          // FireFox with polyfill
+          window.dispatchEvent_(popstateEvent);
+        } else {
+          // normal
+          window.dispatchEvent(popstateEvent);
+        }
+      } catch(error) {
+        // Internet Explorer
+        var fallbackEvent = document.createEvent('CustomEvent');
+        fallbackEvent.initCustomEvent('popstate', false, false, { state: window.history.state });
+        window.dispatchEvent(fallbackEvent);
+      }
+
       event.preventDefault();
     }
 
