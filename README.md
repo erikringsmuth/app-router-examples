@@ -21,7 +21,7 @@ Push state routing uses regular paths `/path` and extends `<a>` tags with the [p
 2. Start the express.js server with `node server.js`
 3. Open [http://localhost:8080/](http://localhost:8080/)
 
-### Other Routers
+## Other Routers
 
 Examples of `app-router`, `flatiron-director`, and plain old HTML files.
 https://github.com/erikringsmuth/polymer-router-demos
