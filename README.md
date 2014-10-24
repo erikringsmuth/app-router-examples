@@ -1,5 +1,5 @@
 ## app-router examples
-Example [app-router](http://erikringsmuth.github.io/app-router/) setup to get you running locally.
+Example [app-router](https://erikringsmuth.github.io/app-router/) setup to get you running locally.
 
 [Download](https://github.com/erikringsmuth/app-router-examples/archive/master.zip) and un-zip the examples.
 
